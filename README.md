@@ -1,36 +1,202 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖤 งาดำออนไลน์ - ร้านขายอาหารเสริมงาดำ
 
-## Getting Started
+โปรเจค Demo ร้านขายอาหารเสริมงาดำออนไลน์แบบครบวงจร สร้างด้วย Next.js 15
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### สำหรับลูกค้า
+- 🏠 **หน้าแรก**: แสดงสินค้าแนะนำและประโยชน์ของงาดำ
+- 🛍️ **หน้าสินค้า**: แสดงรายการสินค้าทั้งหมด พร้อมระบบกรองตามหมวดหมู่
+- 📦 **รายละเอียดสินค้า**: ข้อมูลครบถ้วนของแต่ละสินค้า ประโยชน์ ส่วนประกอบ
+- 🛒 **ตะกร้าสินค้า**: จัดการสินค้าในตะกร้า เพิ่ม/ลด/ลบสินค้า
+- 💳 **ชำระเงิน**: ฟอร์มกรอกข้อมูลและเลือกวิธีการชำระเงิน
+- ℹ️ **เกี่ยวกับเรา**: ข้อมูลเกี่ยวกับร้านค้าและประโยชน์ของงาดำ
+
+### สำหรับ Admin
+- ⚙️ **จัดการสินค้า**: เพิ่ม แก้ไข ลบสินค้า
+- 📊 **ดูรายการสินค้า**: ตารางแสดงข้อมูลสินค้าทั้งหมด
+- 📦 **ตรวจสอบสต๊อก**: เช็คจำนวนสินค้าคงเหลือ
+
+## 🛠️ เทคโนโลยีที่ใช้
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **State Management**: React Context API
+- **Storage**: localStorage (สำหรับตะกร้าสินค้า)
+
+## 📁 โครงสร้างโปรเจค
+
+```
+tanndemo/
+├── app/                          # Next.js App Router
+│   ├── about/                    # หน้าเกี่ยวกับเรา
+│   ├── admin/                    # หน้าจัดการสินค้า (Admin)
+│   ├── cart/                     # หน้าตะกร้าสินค้า
+│   ├── checkout/                 # หน้าชำระเงิน
+│   ├── products/                 # หน้ารายการสินค้า
+│   │   └── [id]/                 # หน้ารายละเอียดสินค้า
+│   ├── layout.tsx                # Layout หลัก
+│   ├── page.tsx                  # หน้าแรก
+│   └── globals.css               # Global styles
+├── components/                   # React Components
+│   ├── Header.tsx                # Header navigation
+│   ├── Footer.tsx                # Footer
+│   └── ProductCard.tsx           # Card แสดงสินค้า
+├── contexts/                     # React Contexts
+│   └── CartContext.tsx           # Context สำหรับจัดการตะกร้า
+├── data/                         # Mock Data
+│   └── products.ts               # ข้อมูลสินค้า
+├── types/                        # TypeScript Types
+│   └── product.ts                # Type definitions
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 การติดตั้งและรันโปรเจค
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ข้อกำหนดเบื้องต้น
+- Node.js 18.0 หรือสูงกว่า
+- npm หรือ yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ขั้นตอนการติดตั้ง
 
-## Learn More
+1. **Clone repository** (หรือใช้โฟลเดอร์ที่มีอยู่)
+```bash
+cd tanndemo
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **ติดตั้ง dependencies**
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **รันโปรเจคในโหมด development**
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **เปิดเบราว์เซอร์** ที่ [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+## 📱 หน้าต่างๆ ในระบบ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### หน้าลูกค้า
+- `/` - หน้าแรก
+- `/products` - รายการสินค้าทั้งหมด
+- `/products/[id]` - รายละเอียดสินค้า
+- `/cart` - ตะกร้าสินค้า
+- `/checkout` - ชำระเงิน
+- `/about` - เกี่ยวกับเรา
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### หน้า Admin
+- `/admin` - จัดการสินค้า
+
+## 💡 Features เด่น
+
+### 1. ระบบตะกร้าสินค้า
+- ใช้ Context API สำหรับจัดการ state
+- บันทึกข้อมูลใน localStorage (ข้อมูลยังคงอยู่แม้ปิดเบราว์เซอร์)
+- เพิ่ม/ลด/ลบสินค้าได้
+- แสดงจำนวนสินค้าในตะกร้าที่ Header
+
+### 2. UI/UX สวยงาม
+- ออกแบบด้วย Tailwind CSS
+- Responsive Design (รองรับทุกขนาดหน้าจอ)
+- Gradient และ Shadow effects
+- Hover animations
+- สีสันที่เหมาะสมกับธีมงาดำ (ดำ-เหลือง)
+
+### 3. ข้อมูลสินค้าครบถ้วน
+- รูปภาพสินค้า
+- ชื่อและคำอธิบาย
+- ราคาและจำนวนคงเหลือ
+- ประโยชน์ของสินค้า
+- ส่วนประกอบ
+
+### 4. หน้า Admin จัดการสินค้า
+- เพิ่มสินค้าใหม่
+- แก้ไขข้อมูลสินค้า
+- ลบสินค้า
+- ตารางแสดงข้อมูลที่อ่านง่าย
+
+## 🎨 สีที่ใช้ในโปรเจค
+
+- **Primary**: สีดำ/เทาเข้ม (#1f2937, #111827)
+- **Accent**: สีเหลือง/ทอง (#fbbf24, #f59e0b)
+- **Background**: สีเทาอ่อน (#f9fafb)
+- **Text**: สีเทาเข้ม (#111827)
+
+## 📝 หมายเหตุสำหรับการพัฒนาต่อ
+
+### สิ่งที่ควรเพิ่มในระบบจริง
+
+1. **ฐานข้อมูล**
+   - เชื่อมต่อกับ Database (MongoDB, PostgreSQL, etc.)
+   - API Routes สำหรับ CRUD operations
+
+2. **Authentication**
+   - ระบบ Login/Register
+   - ป้องกันหน้า Admin ด้วย Authentication
+
+3. **Payment Gateway**
+   - เชื่อมต่อกับระบบชำระเงินจริง (Omise, 2C2P, etc.)
+
+4. **Order Management**
+   - ระบบจัดการคำสั่งซื้อ
+   - ระบบแจ้งเตือนผ่าน Email/SMS
+   - Tracking การจัดส่ง
+
+5. **Image Upload**
+   - ระบบอัพโหลดรูปภาพสินค้า
+   - Image optimization
+
+6. **Search & Filter**
+   - ค้นหาสินค้า
+   - กรองตามราคา, หมวดหมู่
+
+7. **Reviews & Ratings**
+   - ระบบรีวิวสินค้า
+   - ให้คะแนนสินค้า
+
+## 🤝 การพัฒนา
+
+```bash
+# Development
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## 📄 License
+
+โปรเจคนี้สร้างขึ้นเพื่อการเรียนรู้และสาธิต (Demo purposes)
+
+## 👨‍💻 ผู้พัฒนา
+
+สร้างด้วย ❤️ โดย AI Assistant
+
+---
+
+## 🎯 สำหรับผู้ใช้งาน
+
+### วิธีใช้งานสำหรับลูกค้า
+1. เข้าหน้าแรกเพื่อดูสินค้าแนะนำ
+2. คลิก "เลือกซื้อสินค้า" หรือ "สินค้า" ที่เมนู
+3. เลือกสินค้าที่ต้องการและคลิก "เพิ่มลงตะกร้า"
+4. คลิกไอคอนตะกร้าที่มุมบนขวาเพื่อดูสินค้าในตะกร้า
+5. คลิก "ดำเนินการชำระเงิน"
+6. กรอกข้อมูลและเลือกวิธีการชำระเงิน
+7. คลิก "ยืนยันคำสั่งซื้อ"
+
+### วิธีใช้งานสำหรับ Admin
+1. เข้าหน้า Admin ที่ `/admin`
+2. คลิก "เพิ่มสินค้าใหม่" เพื่อเพิ่มสินค้า
+3. คลิก "แก้ไข" เพื่อแก้ไขข้อมูลสินค้า
+4. คลิก "ลบ" เพื่อลบสินค้า
+
+---
+
+**หมายเหตุ**: นี่เป็นโปรเจค Demo ข้อมูลทั้งหมดเป็น Mock Data และจะถูกรีเซ็ตเมื่อรีเฟรชหน้า Admin
