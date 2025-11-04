@@ -28,11 +28,11 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
             <div className="text-2xl md:text-3xl">🖤</div>
             <div className="hidden sm:block">
-              <h1 className="text-xl md:text-2xl font-bold">TANN</h1>
+              <h1 className="text-xl md:text-2xl font-bold">Thai Tech Spirit</h1>
               <p className="text-xs text-gray-300">สุขภาพดี ผมดำสวย</p>
             </div>
             <div className="sm:hidden">
-              <h1 className="text-lg font-bold">TANN</h1>
+              <h1 className="text-lg font-bold">Thai Tech Spirit</h1>
             </div>
           </Link>
           
