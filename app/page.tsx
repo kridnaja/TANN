@@ -11,7 +11,7 @@ export default function Home() {
       <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            TANN🖤
+            Thai Tech Spirit
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300">
             อาหารเสริมงาดำคุณภาพสูง เพื่อสุขภาพที่ดีและผมดำสวยงาม
